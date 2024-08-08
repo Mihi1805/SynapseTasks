@@ -17,11 +17,13 @@ overlap=[]
 for x in range(0,6,1):
     o=len(com_list[x][0].intersection(com_list[x][1]))/10
     overlap.append(o)
-print(overlap)
+#print(overlap)
 
 #Sorting the array 
 sorted_list=sorted(com_listnames,key=lambda x:overlap[com_listnames.index(x)],reverse=True)
-print(sorted_list)
+overlap.sort(reverse=True)
+for x in range(0,6,1):
+    if overlap[x]>=0.3: print(sorted_list[x],overlap[x])
 
 
 #z=zip(com_listnames,overlap)
